@@ -7,5 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 
 class Book extends Model
 {
-    protected $fillable = ["title", "Author", "Genre","year_published"];
+    use HasFactory;
+
+    // Allow mass assignment for these fields
+    protected $fillable = [
+        'title',
+        'author',
+        'description',
+        'published_year',
+    ];
 }
+
